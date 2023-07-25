@@ -1,9 +1,4 @@
 # techdegree-project-4
  OOP Game
-To Do:
-
-Fix remove life so it shows the used up heart thing.
-
-Set up css so that the background slowly grows redder and redder and then flashing when on last try.
-
-Maybe sound?
+Extra Credit 2:
+I've added functionality to the removeLife() function that updates the background color of the body element to progressively darker shades of red as the player runs out of lifes remaining to help build a sense of tension!

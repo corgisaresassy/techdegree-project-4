@@ -32,8 +32,9 @@ keyboard.addEventListener('click',(e)=>{
 // It uses a regex to ensure the key is on the displayed keyboard before beginning the handleInteraction function.
 document.addEventListener('keyup',(e)=>{
     let regex = /^[a-z]$/g;
-    console.log(e.key);
-    if (regex.test(e.key)){ 
+    let keyPressed = e.key;
+    let keyButton = document.getElementById(keyPressed);
+    if (regex.test(keyPressed) && !keyButton.classList.toString().includes('chosen')){ 
         newGame.handleInteraction(e.key);
     }
 })

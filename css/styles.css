@@ -205,3 +205,18 @@ button {
 
 /* Extra Credit Additions! */
 
+.missed1{
+  background-color: #fe3939;
+}
+
+.missed2{
+  background-color: #DE3232;
+}
+
+.missed3{
+  background-color: #BF2b2b;
+}
+
+.missed4{
+  background-color: #9f2424;
+}

@@ -30,12 +30,18 @@ class Game {
     // this method removes a life on each call and, if there are no remaining, invokes gameOver
     removeLife(){
         let remainingLives = document.getElementsByClassName('tries');
-        this.misses++;
+        let livesParent = document.getElementById('scoreboard').children[0];
+        this.missed++;
         remainingLives[0].remove();
-        let numberLives = remainingLives.length;
-            if (this.misses >= 5){
+        livesParent.innerHTML += `<li class="tries"><img src="images/lostHeart.png" alt="Heart Icon" height="35" width="30"></li>`;
+        
+        // Extra Credit section! this code section updates the background color each time the player misses an answer slowly growing redder and redder!
+        let body = document.querySelector('body');
+        body.className = `missed${this.missed}`
+
+        if (this.missed >= 5){
                 this.gameOver(false);
-            }
+        }
     }
 
     // This method handles letter inputs from either keyboard or clicking on a letter.
@@ -60,7 +66,6 @@ class Game {
         let allLetters = document.getElementById('phrase').children[0].children;
         let isWin = true;
         for (let i = 0;i<allLetters.length;i++){
-            console.log(allLetters[i])
             if (!allLetters[i].classList.toString().includes('show')){
                 if(!allLetters[i].classList.toString().includes('space')){
                     isWin = false;   
